@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<!--
+
+ ________________________________________ 
+/ We are the Borg. We will add your maps \
+| to our own. Your worlds will adapt to  |
+\ service us. Resistance is futile.      /
+ ---------------------------------------- 
+        \
+         \
+          \
+           /-/_"/-/_/-/|
+          /"-/-_"/-_//||
+         /__________/|/|
+         |"|_'='-]:+|/||
+         |-+-|.|_'-"||//
+         |[".[:!+-'=|//
+         |='!+|-:]|-|/
+          ----------
+
+
+
+(http://startrekasciiart.blogspot.de/2011/06/borg-cube.html, thanks to Carlo Valenti!)
+
+-->
+
+<html>
+	<head>
+		<title>8b8t Maps - By BigRatMonster</title>
+		<meta name="generator" content="8b8t Map - By BigRatMonster" />
+		<link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewbqXNEzTcKwBcnkP05FZe3q6Lhbym8lDZzGmICuCAg&s">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://rat2b2t.github.io/map">
+		<meta property="twitter:title" content="8b8t Maps - By BigRatMonster">
+		<meta property="twitter:description" content="">
+		<meta property="twitter:image" content="https://r2.e-z.host/61f58301-2601-4b94-881f-633e470880ee/flc8bldn.png">
+
+		<link rel="stylesheet" type="text/css" href="static/css/style.css" />
+		<link rel="stylesheet" href="static/leaflet/leaflet.css" />
+		<script src="static/leaflet/leaflet.js"></script>
+		<style type="text/css">
+		.leaflet-container {
+			background: #383434;
+		}
+		</style>
+
+		<script src="static/js/jquery-2.2.4.min.js"></script>
+		<link rel="stylesheet" href="static/css/bootstrap.min.css">
+		<script src="static/js/bootstrap.min.js"></script>
+
+		<script type="text/javascript" src="static/js/util.js"></script>
+		<script type="text/javascript" src="static/js/handler/base.js"></script>
+		<script type="text/javascript" src="static/js/handler/marker.js"></script>
+		<script type="text/javascript" src="static/js/handler/mapselect.js"></script>
+		<script type="text/javascript" src="static/js/handler/poshash.js"></script>
+		<script type="text/javascript" src="static/js/handler/rotationselect.js"></script>
+		<script type="text/javascript" src="static/js/control/base.js"></script>
+		<script type="text/javascript" src="static/js/control/mapselect.js"></script>
+		<script type="text/javascript" src="static/js/control/marker.js"></script>
+		<script type="text/javascript" src="static/js/control/mousepos.js"></script>
+		<script type="text/javascript" src="static/js/control/rotationselect.js"></script>
+		<script type="text/javascript" src="static/js/mapcrafterui.js"></script>
+
+		<!-- Last update 12.08.2023, 16:31:37 -->
+		<script type="text/javascript" src="config.js"></script>
+		<script type="text/javascript" src="markers.js"></script>
+		<script type="text/javascript" src="markers-generated.js"></script>
+		<script type="text/javascript">
+		var Mapcrafter = new MapcrafterUI(CONFIG);
+
+		function init() {
+			Mapcrafter.init();
+			
+			Mapcrafter.addControl(new MapSelectControl(), "topright", 1);
+			Mapcrafter.addControl(new RotationSelectControl(), "bottomright", 1);
+			Mapcrafter.addControl(new MousePosControl(), "bottomleft", 1);
+
+			// merge the two marker configurations
+			var markers = [];
+			if(typeof MAPCRAFTER_MARKERS !== "undefined")
+				for(var i = 0; i < MAPCRAFTER_MARKERS.length; i++)
+					markers.push(MAPCRAFTER_MARKERS[i]);
+			if(typeof MAPCRAFTER_MARKERS_GENERATED !== "undefined")
+				for(var i = 0; i < MAPCRAFTER_MARKERS_GENERATED.length; i++)
+					markers.push(MAPCRAFTER_MARKERS_GENERATED[i]);
+			// only create marker control if marker groups exist
+			if(markers.length > 0)
+				Mapcrafter.addControl(new MarkerControl(markers), "topright", 2);
+		}
+		</script>
+	</head>
+	<body onload="init()">
+		<div id="mcmap"></div>
+	</body>
+</html>
